@@ -1,5 +1,4 @@
 # train-timetable
-火车时刻表查询App
 
 ### 实现功能：
 
@@ -37,6 +36,17 @@
 
 此外，查询功能和返回顶部功能**使用了IIFE，配合构造函数和原型对象进行了简单的封装**，由于目前app功能简单，文件体积较小，所以没有使用模块化和构建工具处理。
 后期，如果功能增加，再逐步优化。
+
+### 截图展示
+
+<div style="text-align:center;width:50%;margin:0 auto;">
+<img src="https://github.com/Zhouqchao/train-timetable/blob/master/images/search.jpg" width = "300" height = "auto" alt="search"  />
+<p>搜索页</p>
+<img src="https://github.com/Zhouqchao/train-timetable/blob/master/images/searchList.jpg" width = "300" height = "auto" alt="searchList"/>
+<p>搜索结果</p>
+<img src="https://github.com/Zhouqchao/train-timetable/blob/master/images/detail.jpg" width = "300" height = "auto" alt="detail" />
+<p>车次详情</p>
+</div>
 
 ### 关于选择jQuery Mobile：
 
