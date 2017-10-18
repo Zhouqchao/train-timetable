@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>列车时刻表查询</title>
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.3.css">
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/jquery-1.9.0.js"></script>
+	<script src="js/jquery.mobile-1.4.3.js"></script>
+</head>
+<body>
+	<div class="container">	
+		<div data-role="page" id="index">
+			<div data-role="header" data-position="fixed">
+				<h1>列车时刻表查询</h1>
+			</div>
+			<div role="main" class="ui-content">
+
+				<div class="ui-field-contain">
+					<label for="text-basic">发车站：</label>
+					<input type="text" name="text-basic" id="searchStart" value="">
+				</div>
+				<div class="ui-field-contain">
+					<label for="text-basic">终点站：</label>
+					<input type="text" name="text-basic" id="searchEnd" value="">
+				</div>
+				<div class="ui-field-contain">		
+					<label for="text-basic">车次：</label>
+					<input type="text" name="text-basic" id="searchNum" value="">
+				</div>	
+				<button type="button" id="searchBtn" class="ui-btn">搜索</button>
+				<ul data-role="listview" data-inset="true" id="train-list">
+				</ul>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#" data-icon="search" class="ui-btn-active">查询</a></li>
+						<li><a href="#" data-icon="star">收藏</a></li>
+						<li><a href="#" data-icon="gear">设置</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div data-role="page" id="detail">
+			<div data-role="header" data-position="fixed">
+				<h1>列车时刻表查询</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<h2 class="train-info-title"></h2>
+					<table class="table" id="train-info">
+						<thead>
+							<tr>
+								<th>车次/类型</th>
+								<th>始发站</th>
+								<th>终点站</th>
+								<th>发车时间</th>
+								<th>到达时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>	
+
+				<table class="table" id="station-list">
+				    <thead>
+				    	<tr>
+				    		<th>停靠站序</th>
+				    		<th>站名</th>
+				    		<th>进站时间</th>
+				    		<th>发车时间</th>
+				    		<th>停留时间</th>
+				    		<th>操作</th>
+				    	</tr>
+				    </thead>
+					<tbody>
+					</tbody>
+				</table>			
+				<a href="#" class="ui-btn ui-corner-all" data-rel="back" data-icon='back'>返回</a>
+			</div>
+
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#" data-icon="search" class="ui-btn-active">查询</a></li>
+						<li><a href="#" data-icon="camera">收藏</a></li>
+						<li><a href="#" data-icon="gear">设置</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="go-top">👆</div>
+	</div>
+	
+	<script src="js/index.js"></script>
+</body>
+</html>
