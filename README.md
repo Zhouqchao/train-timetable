@@ -15,7 +15,7 @@
 展示在`#detail`页面，这里借鉴了**css-tricks**网站上的方法：[Responsive Data Table Roundup](https://css-tricks.com/responsive-data-table-roundup/)
 
 
-### 简单记录敲键盘过程
+### 开发过程
 首先，首页默认展示`#index`页面，页面提供站到站查询和车次查询。站到站查询的结果将会以ul列表的形式展示在查询按钮的下方。初次加载10条数据，然后
 当拖动滚动条滚动到页面底部时，则加载下一个10条数据。
 
@@ -24,7 +24,7 @@
 再次发起下一个请求。
 但是，由于聚合数据平台api没有提供这种接口，甚至只能用jquery获取jsonp的方式才能得到json数据，所以我自己做了一个小变动。
 即，先在对象实例上绑定一个trainData变量：`this.trainData = null;` 然后在第一次发起站到站请求成功后，便将服务端返回来的数据
-保存在trainData中，后期再使用erHtml()函数配合数组的`.slice()`方法进行截取部分数据，每次截取10条，append到ul列表中。接着在`$(window).scroll()`事件中
+保存在trainData中，后期再使用renderHtml()函数配合数组的`.slice()`方法进行截取部分数据，每次截取10条，append到ul列表中。接着在`$(window).scroll()`事件中
 再次更新page值，并调用renderHtml()函数进行处理。
 **简单来说，一般lazyload会发起多次请求，每次加载一小段数据，
 而我这里使用的是只发起一次请求，先获取所有数据，然后再逐步加载。**
@@ -56,12 +56,4 @@ jQuery Mobile版本冲突的问题，jQuery Mobile的bug问题。下面简单列
 + 动态添加DOM至ul列表，结果.listview('refresh')无效，.listview().listview('refresh')同样无效。
 + 动态添加table row(thead/tbody,tr,td)至table表格，结果.table('refresh')无效，.table().table('refresh')同样无效，$('table').trigger('create')同样无效。
 + 动态添加table row至table表格，导致第二次及以后从主页进入表格页面，table reflow效果错乱，即thead表头时有时无，体验很差。
-+ 另外，个人感觉JQM做出来的网页界面比较简洁朴素，不如bootstrap设计出来的界面看着舒服。
 
-总之，这是我第一次使用jQuery Mobile，体验不是太好，不过我还是希望jQuery Mobile也能像jQuery一样一直火下去。
-
-### 打算：
-
-后期打算使用bootstrap重做界面ui,然后逐步丰富功能。
-
-最后附上项目链接：[火车时刻表查询App](http://zhouqichao.com/train-timetable/)
